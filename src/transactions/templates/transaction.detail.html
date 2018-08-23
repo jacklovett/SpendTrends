@@ -1,0 +1,32 @@
+{% extends "transactions.base.html" %}
+{% load transactions_tags %}
+{% block trans_content %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="input-group-btn">
+		       <a href='{% url "transactions:edit" id=transaction.id %}' class="button"><i class="glyphicon glyphicon-pencil"></i></a>
+		       <a href="#" class="button"><i class="glyphicon glyphicon-remove-circle"></i></a>
+		</div>			
+	</div>
+	<div class="panel-body">
+		 <p class="detail-tag">Description: </p> 
+		  {{ transaction.description }} 
+		  <p><span class="detail-tag">Amount: </span> 
+		 		{% if transaction.amount < 0 %}
+					<i class="glyphicon glyphicon-triangle-bottom triangle-red"></i>
+				{% elif transaction.amount > 0 %}
+					<i class="glyphicon glyphicon-triangle-top triangle-green"></i>
+				{% endif %}
+		  	{{ transaction.amount | currency}} 
+		  </p>
+		  <p> 
+		 	<span class="detail-tag">Date: </span> {{ transaction.createdDate | date:"jS F Y H:i" }}
+		 <p/>
+		 <p class="detail-tag">Comments: </p> 
+		  {{ transaction.comments }}
+	</div>
+</div>
+<a href='{% url "wallets:list" %}'><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+<h4 style="display: inline; padding: 0 5px;">Go Back</h4> 
+{% endblock trans_content %}
+

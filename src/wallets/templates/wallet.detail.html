@@ -1,0 +1,38 @@
+{% extends "wallets.base.html" %}
+{% load wallets_tags %}
+{% block walls_content %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="input-group-btn">
+		       <a href='{% url "wallets:edit" id=wallet.id %}' class="button"><i class="glyphicon glyphicon-pencil"></i></a>
+		       <a href="#" class="button"><i class="glyphicon glyphicon-remove-circle"></i></a>
+		</div>			
+	</div>
+	<div class="panel-body">
+		<div>
+			<h3 class="active-wallet">{{ wallet.name }}</h3>
+			{% if wallet.isActive %}
+				<span class="activity-tag active">Active</span>
+			{% else %}
+				<span class="activity-tag inactive">Inactive</span>
+			{% endif %} 
+			<h3 class="balance">{{ wallet.currentBalance | currency }}</h3>
+		</div>
+			<p>
+			  <span class="detail-tag">Last updated:</span> {{ wallet.modifiedDate | date:"jS F Y H:i"}}
+			</p>
+			<span class="detail-tag">Description:</span>  
+		  	<p>{{ wallet.description }} </p> 
+			<p>
+				<span class="detail-tag">Currency:</span> 
+				<span class="currency-tag">{{ wallet.currency }}</span>
+			</p>	
+			<p>
+				<span class="detail-tag">Created Date: </span>{{ wallet.createdDate | date:"jS F Y H:i"}}
+			</p>				
+		</div>	
+</div>
+<a href='{% url "wallets:list" %}'><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+<h4 style="display: inline; padding: 0 5px;">Go Back</h4>
+{% endblock walls_content %}
+

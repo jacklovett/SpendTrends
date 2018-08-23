@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	{% load staticfiles %}
+	{% load transactions_tags %}
+	<link rel="stylesheet" href="{% static 'css/transactions.css' %}"/>
+	
+	{% if request.resolver_match.view_name == "transactions:list" %}
+		{% if active_wallet %}
+			<div class="panel balance-panel">
+				<div class="panel-body">
+				<p class="active-wallet">{{ active_wallet.name }}</p>
+				<h3 class="balance">{{ active_wallet.currentBalance | currency }}</h3>
+				<p class="balance-updated-date">Last updated: {{ active_wallet.modifiedDate | date:"jS F Y H:i"}}</p>					
+				</div>
+			</div>
+		{% else %}
+			<h4>You have not set up any wallets yet...</h4>
+		{% endif %}
+	{% else %}
+		<h2>{{ title }}</h2>
+	{% endif %}
+	{% block trans_content %}
+		
+	{% endblock trans_content %}
+{% endblock content %}

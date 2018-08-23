@@ -1,0 +1,13 @@
+{% extends "wallets.base.html" %}
+
+{% block walls_content %}
+<div class="panel panel-default">
+	<div class="panel-body">
+		<form method="POST" action="" class="form">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" class="btn btn-raised btn-primary" value="Save"/>
+		<input type="submit" onClick="window.history.back();" class="btn btn-default" value="Cancel" />
+		</form>
+	</div>
+</div>  
+{% endblock walls_content %}

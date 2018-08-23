@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="{% static 'css/nav.css' %}"/>
+</head>
+<div class="container">
+	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+	    <div class="navbar-header">    
+	      <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span> 
+	      </button><div>
+	      <a class="navbar-brand brand-custom" href='{% url "transactions:list" %}'>Spend Trends</a>
+	      <a href='{% url "transactions:create" %}' class="navbar-brand navbar-right trans-add-btn">
+	      	<i class="glyphicon glyphicon-plus-sign button"></i>
+	      </a> </div>    
+	    </div>
+	      <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	        <li><a href='{% url "transactions:list" %}'>Transactions</a></li>
+	        <li><a href='{% url "overview:overview" %}'>Overview</a></li>    
+	        <li><a href='{% url "wallets:list" %}'>Wallets</a></li>      
+	      </ul>      
+	    </div>    
+	</nav>
+</div>

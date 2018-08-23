@@ -1,0 +1,36 @@
+p {
+	margin: 2px;
+	font-size: 14px;
+}
+
+.activity-tag {
+	font-size: 12px;
+	padding: 5px;
+}
+
+.active-wallet {
+	display: inline;
+	font-size: 21px;
+	color: #337ab7;
+}
+
+.active {
+	color: #00b33c;
+}
+
+.inactive {
+	color: #ff4d4d;
+} 
+
+.detail-tag {
+	color: #337ab7;
+	font-size: 14px;
+}
+
+.currency-tag {
+	background-color: #337ab7;
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 50px;
+    font-size: 12px;
+}

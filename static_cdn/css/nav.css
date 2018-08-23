@@ -1,0 +1,57 @@
+/* nav bar */
+.navbar-custom {
+  	background-color: #002233;
+    border-color: #001a33;
+}
+
+.navbar-collapse {
+  	border-color: #001a33 !important;
+}
+
+.navbar-toggle {
+	border: none;
+	background-color: #002233 !important;		
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+.navbar-toggle:focus, .navbar-toggle:hover {
+	border: none;
+	background-color: #002233;
+	color: #fff;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #fff;	
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: #fff;  /* Sets the text hover colour on navbar*/
+background-color: #00334d;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #fff; /*BACKGROUND color for active*/
+  background-color: #00334d;
+  border-color: #001a33;
+}
+
+  .dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: #fff;
+    background-color: #002233;  /*change color of links in drop down here*/
+   }
+
+  .navbar-default .navbar-nav > li {
+  background-color: #002233; /*BACKGROUND color for active*/
+  color: #fff;
+  border-color: #001a33;
+  }  
